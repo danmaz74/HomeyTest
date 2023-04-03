@@ -101,9 +101,9 @@ time ans see the real-time updates.
 
 ## Installing and running the web server
 
-* docker-compose build
-* docker-compose run web bin/rails db:drop db:setup
-* docker-compose up
+* docker compose build
+* docker compose run web bin/rails db:drop db:setup
+* docker compose up
 
 The server is available at http://localhost:3000
 
