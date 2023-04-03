@@ -28,7 +28,7 @@
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+# /config/master.key # disabled for easier deployment as this is only a test
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
