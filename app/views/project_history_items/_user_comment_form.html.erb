@@ -1,0 +1,18 @@
+<%= turbo_frame_tag "project_history_item_form" do %>
+  <%= form_with model: project_history_item,
+                url: create_user_comment_project_project_history_items_path(@project) do |form| %>
+    <% if project_history_item.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(project_history_item.errors.count, "error") %> prohibited this comment from being saved:</h5>
+
+        <ul>
+          <% project_history_item.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= form.text_field :content, class: 'w-75 p-3"', required: true %>
+    <%= form.submit 'Add Comment' %>
+  <% end %>
+<% end %>

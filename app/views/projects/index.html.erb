@@ -1,0 +1,20 @@
+<h1>Projects</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Owner</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= link_to project.name, project %></td>
+      <td><%= project.owner.name %></td>
+      <td><%= project.status %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

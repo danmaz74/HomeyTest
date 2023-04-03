@@ -1,0 +1,8 @@
+<tr
+  class="<%= project_history_item.item_type == 'status_change' ? 'bg-light' : ''%>"
+  id="<%= dom_id(project_history_item) %>"
+>
+  <td><%= project_history_item.source %></td>
+  <td><%= project_history_item.content %></td>
+  <td><%= project_history_item.created_at.to_formatted_s(:short) %></td>
+</tr>

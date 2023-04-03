@@ -1,0 +1,22 @@
+<%= render @project, is_owner: @is_owner, available_transition_events: @available_transition_events %>
+
+<div class="mt-5">
+  <h4>Project Log</h4>
+
+  <%= render partial: "project_history_items/user_comment_form", locals: { project_history_item: ProjectHistoryItem.new } %>
+
+  <%= turbo_stream_from @project, :project_history_items %>
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>Content</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+
+    <tbody id="<%= "#{dom_id(@project)}_project_history_items" %>">
+      <%= render @project.project_history_items.order(created_at: :desc) %>
+    </tbody>
+  </table>
+</div>
